@@ -244,7 +244,7 @@
                                     '_field_name'  => 'meta_description',
                                     '_field_trans' => get_field_translations($dataTypeContent, 'meta_description')
                                 ])
-                                <textarea class="form-control" name="meta_description">{{ $dataTypeContent->meta_description ?? '' }}</textarea>
+                                <textarea class="form-control" name="meta_description" rows="5">{{ $dataTypeContent->meta_description ?? '' }} </textarea>
                             </div>
                         </div>
                     </div>

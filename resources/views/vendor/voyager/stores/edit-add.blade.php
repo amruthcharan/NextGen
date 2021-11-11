@@ -181,7 +181,7 @@
                                     '_field_name'  => 'seo_description',
                                     '_field_trans' => 'seo_description'
                                 ])
-                                <textarea class="form-control" required name="seo_description">{{ $dataTypeContent->seo_description ?? '' }}</textarea>
+                                <textarea class="form-control" rows="5" required name="seo_description">{{ $dataTypeContent->seo_description ?? '' }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -201,11 +201,6 @@
                                 <img src="{{ filter_var($dataTypeContent->logo, FILTER_VALIDATE_URL) ? $dataTypeContent->logo : Voyager::image( $dataTypeContent->logo ) }}" style="width:100%" />
                             @endif
                             <input type="file" {{$add ? 'required' : ''}} name="logo">
-                            <label for="logo">Feature Image</label>
-                            @if(isset($dataTypeContent->feature_image))
-                                <img src="{{ filter_var($dataTypeContent->feature_image, FILTER_VALIDATE_URL) ? $dataTypeContent->feature_image : Voyager::image( $dataTypeContent->feature_image ) }}" style="width:100%" />
-                            @endif
-                            <input type="file" name="feature_image">
                         </div>
                     </div>
 

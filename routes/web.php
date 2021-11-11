@@ -20,6 +20,9 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', 'HomeController')->name('home');
+
+Route::get('/cout/{cid}', 'AffiliateRedirectController')->name('out');
+
 Route::resource('/headings', 'HeadingsController');
 Route::get('/{test}/{test2}', 'PageController')->middleware('redirectIfPossible');
 
@@ -35,6 +38,7 @@ Route::get('/{test}/{test2}', 'PageController')->middleware('redirectIfPossible'
     Route::get('/search', 'SearchController@search')->name('search');
 
     Route::get('/{page}', 'PageController')->name('page');
+
 
 
 Route::post('/contact', 'ContactController@submit')->name('submit-contact');

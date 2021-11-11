@@ -36,7 +36,8 @@ class PageController extends Controller
                 $q->active();
             }])->first()) {
             $selected = Coupon::with('store')->find(request('coupon'));
-            return view('frontend.' . config('nextgen.theme') . '.store.show', compact(['store', 'categories', 'selected']));
+            $related = Store::published()->whereCategoryId($store->category->id)->where('id', '<>', $store->id)->take(6)->get();
+            return view('frontend.' . config('nextgen.theme') . '.store.show', compact(['store', 'categories', 'selected', 'related']));
         } else {
             abort(404);
         }

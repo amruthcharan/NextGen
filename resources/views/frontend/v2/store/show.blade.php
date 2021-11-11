@@ -64,10 +64,10 @@
                         </div>
                     </div>
                     <div class="card mb-3">
-                        <h4 class="card-title text-center mt-3">Quick Links</h4>
+                        <h4 class="card-title text-center mt-3">Related Stores</h4>
                         <div class="card-body pt-0">
-                            @foreach($store->headings->sortBy('order')->pluck('title', 'id') as $id => $title)
-                                <a class="d-block" href="#{{ $id }}">{{ $title }}</a>
+                            @foreach($related as $store)
+                                <a class="d-block" href="{{ $store->slug }}">{{ $store->name }}</a>
                             @endforeach
                         </div>
                     </div>

@@ -6,7 +6,7 @@
 <div class="coupon-box">
     <div class="row">
         @php
-            $url = $coupon->affiliate_url ?? $store->affiliate_url ?? $store->website_url;
+            $url = route('out', $coupon->id);
         @endphp
         <div class="col-md-2 col-sm-4 col-xs-4 h-100 {{$coupon->is_editor_pick ? '' : 'my-auto'}}">
             @if($coupon->is_editor_pick)
@@ -25,7 +25,7 @@
                 </a>
             </h3>
             <div class="coupon_desc text-center text-sm-left">
-                <p>{{ $coupon->description }}</p>
+                {!! $coupon->description !!}
             </div>
         </div>
         <div class="col-md-3 col-xs-12 col-sm-12 col-lg-3 text-center pull-right my-auto">
@@ -33,7 +33,7 @@
                 @if($coupon->type == \App\Coupon::TYPES[0])
                     <a rel="nofollow" href="{{ $url }}" class="btn btn-primary active" target="_blank">DEAL ACTIVATED</a>
                 @else
-                    <a rel="nofollow" href="{{ $url }}" target="_blank">{{ $coupon->code }}</a>
+                    <a rel="nofollow" href="{{ $url }}" class="btn btn-primary active" onclick="showCoupon({{ $coupon->id }})">{{ $coupon->code }}</a>
                 @endif
             @else
                 <a rel="nofollow" class="btn btn-primary" href="{{ $url }}" onclick="showCoupon({{ $coupon->id }})">
