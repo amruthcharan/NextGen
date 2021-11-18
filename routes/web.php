@@ -24,6 +24,8 @@ Route::get('/', 'HomeController')->name('home');
 Route::get('/cout/{cid}', 'AffiliateRedirectController')->name('out');
 
 Route::resource('/headings', 'HeadingsController');
+Route::get('/generate-sitemap', 'GenerateSitemap')->name('generate');
+
 Route::get('/{test}/{test2}', 'PageController')->middleware('redirectIfPossible');
 
 
@@ -42,4 +44,5 @@ Route::get('/{test}/{test2}', 'PageController')->middleware('redirectIfPossible'
 
 
 Route::post('/contact', 'ContactController@submit')->name('submit-contact');
+
 

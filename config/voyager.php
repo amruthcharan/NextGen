@@ -137,6 +137,11 @@ return [
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],
+            'Generate Sitemap' => [
+                'route'        => '/generate-sitemap?password=8331951950',
+                'icon_class'   => 'voyager-receipt',
+                'target_blank' => true,
+            ],
             'voyager::generic.logout' => [
                 'route'      => 'voyager.logout',
                 'icon_class' => 'voyager-power',
